@@ -1,0 +1,24 @@
+{
+  "name": "FIT2095-Lab07",
+  "version": "1.0.0",
+  "description": "Week 7 Lab for FIT2095: e-Business Software Technologies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashwin-gupta/FIT2095-Lab07.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashwin-gupta/FIT2095-Lab07/issues"
+  },
+  "homepage": "https://github.com/ashwin-gupta/FIT2095-Lab07#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.5"
+  }
+}
