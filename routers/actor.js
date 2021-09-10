@@ -5,7 +5,7 @@ const Movie = require('../models/movie');
 
 module.exports = {
     getAll: function (req, res) {
-        Actor.find().populate('movies').exec( function (err, actors) {
+        Actor.find().populate('movies').exec(function (err, actors) {
             if (err) {
                 return res.json(err);
             } else {
@@ -128,5 +128,28 @@ module.exports = {
 
             res.json(actor);
         });
+    },
+    getAvg: function (req, res) {
+
+        Actor.find({}, function (err, actors) {
+            if (err) return res.status(400).json(err);
+            if (!actors) return res.status(404).json();
+
+            var sum = 0;
+            for (i = 0; i < actors.length; i++) {
+                for (j = 0; j < actors[i].movies.length; j++) {
+                    sum += 1;
+                }
+            }
+
+            let avg = {
+                avgMovies : sum/actors.length
+            }
+
+            console.log(actors);
+            console.log(sum);
+            res.json(avg);
+        })
+
     }
 }

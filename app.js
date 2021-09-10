@@ -31,18 +31,19 @@ mongoose.connect(url, function (err) {
 
 app.get('/actors', actors.getAll);
 app.post('/actors', actors.createOne);
+app.get('/actors/avgmovies', actors.getAvg);
 app.get('/actors/:id', actors.getOne);
 app.put('/actors/:id', actors.updateOne);
 app.delete('/actors/deleteActorMovies/:id', actors.deleteOneAndMovies);
 app.delete('/actors/:id', actors.deleteOne);
-app.put('/actors/:aId/:mId', actors.removeMovie);
-app.put('/actors/addMovie/:aId/:mId', actors.addMovie);
+app.delete('/actors/:aId/:mId', actors.removeMovie);
+app.put('/actors/:aId/:mId', actors.addMovie);
 
 
 app.get('/movies', movies.getAll);
 app.post('/movies', movies.createOne);
-app.put('/movies/addActor/:mId/:aId', movies.addActor);
-app.put('/movies/:mId/:aId', movies.removeActor);
+app.put('/movies/:mId/:aId', movies.addActor);
+app.delete('/movies/:mId/:aId', movies.removeActor);
 app.get('/movies/:id', movies.getOne);
 app.put('/movies/:id', movies.updateOne);
 app.delete('/movies/deleteByYear', movies.deleteByYear);
